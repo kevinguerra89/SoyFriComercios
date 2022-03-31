@@ -3,9 +3,6 @@ import User from '../models/User';
 
 export const verifyToken = async (req, res, next) => {
     try {
-        //For tests
-        next();
-        return;
         if (!req.headers.authorization) {
             return res.status(403).json({ message: "No token provided" });
         }
